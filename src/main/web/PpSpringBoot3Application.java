@@ -1,4 +1,4 @@
-package PP_SpringBoot3;
+package web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,13 +1,16 @@
-package PP_SpringBoot3.dao;
+package web.dao;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
-import PP_SpringBoot3.model.User;
+import org.springframework.transaction.annotation.Transactional;
+import web.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
-@Repository
+@Component
+@Transactional
 public class UserDaolmpl implements UserDao {
 
     @PersistenceContext
@@ -19,7 +22,7 @@ public class UserDaolmpl implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        return getEntityManager().createQuery("From User").getResultList();
+        return getEntityManager().createQuery("select u from User u", User.class).getResultList();
     }
 
     @Override
@@ -34,8 +37,7 @@ public class UserDaolmpl implements UserDao {
 
     @Override
     public void removeUser(Long id) {
-        getEntityManager().createQuery("delete from User where id= :id").setParameter("id", id)
-                .executeUpdate();
+        getEntityManager().remove(getUserById(id));
     }
 
     @Override

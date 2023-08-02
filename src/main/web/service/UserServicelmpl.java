@@ -1,11 +1,13 @@
-package PP_SpringBoot3.service;
+package web.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import PP_SpringBoot3.dao.UserDao;
-import PP_SpringBoot3.model.User;
+import web.dao.UserDao;
+import web.model.User;
 
+
+import javax.validation.Valid;
 import java.util.List;
 
 @Service
@@ -40,7 +42,7 @@ public class UserServicelmpl implements UserService {
     }
 
     @Override
-    public void editUser(User user) {
+    public void editUser(@Valid User user) {
         userDao.editUser(user);
     }
 }

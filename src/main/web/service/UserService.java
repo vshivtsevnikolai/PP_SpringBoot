@@ -1,7 +1,8 @@
-package PP_SpringBoot3.service;
+package web.service;
 
-import PP_SpringBoot3.model.User;
+import web.model.User;
 
+import javax.validation.Valid;
 import java.util.List;
 
 public interface UserService {
@@ -13,5 +14,5 @@ public interface UserService {
 
     void removeUser(Long id);
 
-    void editUser(User user);
+    void editUser(@Valid User user);
 }

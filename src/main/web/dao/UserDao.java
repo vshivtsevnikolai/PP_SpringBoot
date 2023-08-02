@@ -1,6 +1,6 @@
-package PP_SpringBoot3.dao;
+package web.dao;
 
-import PP_SpringBoot3.model.User;
+import web.model.User;
 
 import java.util.List;
 
