@@ -15,11 +15,11 @@ public class User {
     private Long id;
 
     @Column(name = "name")
-    @Pattern(regexp = "[A-Za-z]{2,15}", message = "Name should be beween 2 and 15 latin characters")
+    @Pattern(regexp = "[А-Яа-яA-Za-z]{2,15}", message = "Name should be between 2 and 15 latin or cyrillic characters")
     private String name;
 
     @Column(name = "lastname")
-    @Pattern(regexp = "[A-Za-z]{2,15}", message = "Lastname should be beween 2 and 15 latin characters")
+    @Pattern(regexp = "[А-Яа-яA-Za-z]{2,15}", message = "Lastname should be between 2 and 15 latin or cyrillic characters")
     private String lastname;
 
     @Column(name = "age")

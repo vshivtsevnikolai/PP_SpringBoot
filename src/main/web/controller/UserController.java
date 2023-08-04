@@ -1,10 +1,8 @@
 package web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import web.model.User;
@@ -29,7 +27,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public String getUser (@PathVariable("id") Long id, Model model) {
+    public String getUser(@PathVariable("id") Long id, Model model) {
         model.addAttribute("user", userService.getUserById(id));
         return "user";
     }

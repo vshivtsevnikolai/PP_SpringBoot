@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import web.dao.UserDao;
 import web.model.User;
+import web.service.UserService;
 
 
 import javax.validation.Valid;
@@ -31,16 +32,19 @@ public class UserServicelmpl implements UserService {
         return userDao.getUserById(id);
     }
 
+    @Transactional
     @Override
     public void addUser(User user) {
         userDao.addUser(user);
     }
 
+    @Transactional
     @Override
     public void removeUser(Long id) {
         userDao.removeUser(id);
     }
 
+    @Transactional
     @Override
     public void editUser(@Valid User user) {
         userDao.editUser(user);
